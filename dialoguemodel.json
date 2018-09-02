@@ -1,0 +1,81 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my memories",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "no"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PlayMemory",
+                    "slots": [],
+                    "samples": [
+                        "please",
+                        "for sure",
+                        "why not",
+                        "yeet",
+                        "yee",
+                        "yea",
+                        "yeah",
+                        "of course",
+                        "absolutely",
+                        "yeppers",
+                        "yuppers",
+                        "yupper",
+                        "yes please",
+                        "yep",
+                        "yes",
+                        "tell me one memory",
+                        "tell a memory",
+                        "tell me a memory",
+                        "play some memories",
+                        "play one memory",
+                        "say a memory for me",
+                        "tell my memories to play a memory",
+                        "remember for me",
+                        "say a memory",
+                        "play a memory",
+                        "play me a memory"
+                    ]
+                },
+                {
+                    "name": "PlayDirtyMemory",
+                    "slots": [],
+                    "samples": [
+                        "say something dirty",
+                        "say something sexy",
+                        "make me horny",
+                        "tell me something sexy",
+                        "tell me something dirty",
+                        "harder",
+                        "remember something dirty",
+                        "tell me a dirty memory",
+                        "say some dirty memories",
+                        "say a dirty memory",
+                        "play a sexy memory",
+                        "play a dirty memory",
+                        "play a dirty",
+                        "play me a sexy memory",
+                        "play me a dirty memory"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
