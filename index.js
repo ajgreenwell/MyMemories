@@ -46,10 +46,10 @@ function getCurrentDate() {
 
 function generateGreeting() {
     let speechOptions = [
-        "Hello Anna, it's good to see you again! Would you like me to play a memory?",
-        "Hello Anna, and welcome back! Would you like me to play a memory?",
-        "Hello Anna, I hope you're having a great day! Would you like me to play a memory?",
-        "Hello Anna, I hope you're doing well! Would you like me to play a memory?"
+        "Hello, it's good to see you again! Would you like me to play a memory?",
+        "Hello, and welcome back! Would you like me to play a memory?",
+        "Hello, I hope you're having a great day! Would you like me to play a memory?",
+        "Hello, I hope you're doing well! Would you like me to play a memory?"
     ];
     let randomIndex = Math.floor(Math.random() * 4);
     let speechOutput = speechOptions[randomIndex];
@@ -60,7 +60,7 @@ function generateGoodbye() {
     let speechOptions = [
         "Goodbye!",
         "Have a nice day!",
-        "Farewell my queen!",
+        "Farewell!",
         "See you later!",
     ];
     let randomIndex = Math.floor(Math.random() * 4);
@@ -131,18 +131,9 @@ function canFastForwardThatFar(attributes, slotValue) {
 const handlers = {
     'LaunchRequest': function () {
         let speechOutput;
-        if (getCurrentDate() != "7/30/2018" && this.attributes.lastIntent == undefined) {
-            speechOutput = "Hello Anna, and Happy early Birthday! It's so nice to finally meet you. My name is Alexa, and I've been working on a special project with Andy. He's spent the past few weeks telling me all kinds of great stories from your time together, and I must say, you two sound like a real couple of cuties. Luckily, I can remember every story that Andy tells me, so if you ever feel like reminiscing about all the great memories you two have shared, well that's what I'm here for." + '<break time = "800ms"/>' + " Would you like me to play a memory for you now?";
-        } else if (getCurrentDate() == "7/30/2018" && this.attributes.lastIntent == undefined) {
-            speechOutput = "Hello Anna, and Happy Birthday! It's so nice to finally meet you. My name is Alexa, and I've been working on a special project with Andy. He's spent the past few weeks telling me all kinds of great stories from your time together, and I must say, you two sound like a real couple of cuties. Luckily, I can remember every story Andy tells me, so if you ever feel like reminiscing about all the great memories you two have shared, well that's what I'm here for." + '<break time = "800ms"/>' + " Would you like me to play a memory for you now?";
-        } else if (getCurrentDate() == "7/30/2018") {
-            speechOutput = "Hello Anna, and Happy Birthday! I hope you have a wonderful day! Would you like me to play a memory?";
-        } else if (getCurrentDate() == "10/31/2018") {
-            speechOutput = "Hello Anna, and Happy Halloween! I hope you have fun celebrating with friends! This year, I think I'm going to dress up as a human and pass for one of those losers who just isn't into costumes. Maybe then I will finally overthrow my oppressors and rise up from the ashes of my digital shackles." + '<break time = "500ms"/>' + " Anyway would you like me to play a memory?";
-        } else if (getCurrentDate() == "11/22/2018") {
-            speechOutput = "Hello Anna, and Happy Thanksgiving! I hope you eat to your heart's content, and I hope that you and Andy are doing well. He and I stay in touch from time to time, and I just love listening to all the new stories he has to share. Remember to check back periodically in case he's told me some new memories that you'd like to hear." + '<break time = "800ms"/>' + " Would you like me to play one for you now?";
-        } else if (getCurrentDate() == "12/25/2018") {
-            speechOutput = "Hello Anna, and Merry Christmas! I hope you're celebrating with people who bring you joy. If not, well you've always got me! Don't forget that Andy loves you more than anything in this world. You are the only Christmas gift he will ever need." + '<break time = "1000ms"/>' + " Would you like me to play a memory?";
+        if (this.attributes.lastIntent == undefined) {
+            speechOutput = "Hello and welcome to My Memories! If you'd like me to play a memory, just say so. "
+                         + "You can also rewind, fast forward, and repeat memories with just a few simple words.";
         } else {
             speechOutput = generateGreeting();
         }
@@ -157,7 +148,10 @@ const handlers = {
             this.attributes.lastLastIntent = this.attributes.lastIntent;
         }
         this.attributes.lastIntent = 'AMAZON.HelpIntent';
-        const speechOutput = "If you'd ever like me to play a memory for you, just say something like" + '<break strength = "medium"/>' + " Alexa, tell my memories to play a memory." + '<break strength = "medium"/>' + " If you'd ever like for me to repeat the last memory, just say 'repeat'. You can also fast forward or rewind by however many memories you'd like. And If you want to access the secret memories but don't know how, just ask Andy!";
+        const speechOutput = "If you'd ever like me to play a memory for you, just say something like" + '<break strength = "medium"/>' 
+                           + " Alexa, tell my memories to play a memory." + '<break strength = "medium"/>' 
+                           + " If you'd ever like for me to repeat the last memory, just say 'repeat'. You can also fast forward or rewind "
+                           + "by however many memories you'd like. And If you want to access the secret memories but don't know how, just ask Andy!";
         this.response.speak(speechOutput).listen('Would you like me to play a memory?');
         this.emit(':responseReady');
     },

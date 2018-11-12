@@ -57,21 +57,10 @@
                     "name": "PlayDirtyMemory",
                     "slots": [],
                     "samples": [
-                        "say something dirty",
-                        "say something sexy",
-                        "make me horny",
-                        "tell me something sexy",
-                        "tell me something dirty",
-                        "harder",
-                        "remember something dirty",
-                        "tell me a dirty memory",
-                        "say some dirty memories",
-                        "say a dirty memory",
-                        "play a sexy memory",
-                        "play a dirty memory",
-                        "play a dirty",
-                        "play me a sexy memory",
-                        "play me a dirty memory"
+                        "play a secret memory",
+                        "play my secret memories",
+                        "play my secrets",
+                        "tell me a secret"
                     ]
                 }
             ],
